@@ -40,6 +40,7 @@ def train(train_data, dev_data, model, model_par, criterion, optimizer):
         model.eval()
         dev_loss = run_epoch(dev_data, model_par,
                              MultiGPULossCompute(model.generator, criterion, config.device_id, None))
+        print("-----")
         bleu_score = evaluate(dev_data, model)
         logging.info('Epoch: {}, Dev loss: {}, Bleu Score: {}'.format(epoch, dev_loss, bleu_score))
 
