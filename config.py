@@ -12,33 +12,33 @@ bos_idx = 2
 eos_idx = 3
 src_vocab_size = 32000
 tgt_vocab_size = 32000
-batch_size = 256  # 32 #lgy test 64
+batch_size = 128  # 32 #lgy test 64
 epoch_num = 40
 early_stop = 5
-lr = 3e-4
+lr = 5e-4 # 3e-4
 
 # greed decode的最大句子长度
 max_len = 60
 # beam size for bleu
-beam_size = 3
+beam_size = 1  # 3
 # Label Smoothing
 use_smoothing = False
 # NoamOpt
-use_noamopt = True
+use_noamopt = False # True
 
 data_dir = './data'
 train_data_path = './data/json/train.json'
 dev_data_path = './data/json/dev.json'
 test_data_path = './data/json/test.json'
-model_path = './experiment/model.pth'
-log_path = './experiment/train.log'
-output_path = './experiment/output.txt'
+model_path = f'./experiment/model_{lr}_{beam_size}_[wd]{use_noamopt}_[ls]{use_smoothing}_{batch_size}.pth'
+log_path = f'./experiment/train_{lr}_{beam_size}_[wd]{use_noamopt}_[ls]{use_smoothing}_{batch_size}.log'
+output_path = f'./experiment/output_{lr}_{beam_size}_[wd]{use_noamopt}_[ls]{use_smoothing}_{batch_size}.txt'
 
 # gpu_id and device id is the relative id
 # thus, if you wanna use os.environ['CUDA_VISIBLE_DEVICES'] = '2, 3'
 # you should set CUDA_VISIBLE_DEVICES = 2 as main -> gpu_id = '0', device_id = [0, 1]
 gpu_id = '0'
-device_id = [0, 1]
+device_id = [0]
 
 # set device
 if gpu_id != '':

@@ -108,16 +108,20 @@ def one_sentence_translate(sent, beam_search=True):
 
 def translate_example():
     """单句翻译示例"""
-    sent = "The near-term policy remedies are clear: raise the minimum wage to a level that will keep a " \
-           "fully employed worker and his or her family out of poverty, and extend the earned-income tax credit " \
-           "to childless workers."
+    # sent = "The near-term policy remedies are clear: raise the minimum wage to a level that will keep a " \
+    #        "fully employed worker and his or her family out of poverty, and extend the earned-income tax credit " \
+    #        "to childless workers."
+    # sent = "These sentences cover a variety of basic topics and can be helpful for someone starting to learn Chinese or looking to practice simple conversational phrases."
+    sent_list = ["Hello, how are you?", "I love reading books.", "The weather is beautiful today.", "Can you help me?",
+                    "I am learning Chinese.", "What time is it?", "I am hungry.", "Hello."]
     # tgt: 近期的政策对策很明确：把最低工资提升到足以一个全职工人及其家庭免于贫困的水平，扩大对无子女劳动者的工资所得税减免。
-    one_sentence_translate(sent, beam_search=True)
+    for sent in sent_list:
+        one_sentence_translate(sent, beam_search=True)
 
 
 if __name__ == "__main__":
     import os
-    os.environ['CUDA_VISIBLE_DEVICES'] = '0, 1'
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0'
     # print(os.environ['CUDA_VISIBLE_DEVICES'])
     import warnings
     warnings.filterwarnings('ignore')

@@ -1,1 +1,1 @@
-/nethome/chuang475/miniconda3/envs/ftp/bin/python3.8 main.py
+/nethome/chuang475/flash/miniconda3/envs/lavis/bin/python main.py
