@@ -15,12 +15,12 @@ tgt_vocab_size = 32000
 batch_size = 128  # 32 #lgy test 64
 epoch_num = 40
 early_stop = 5
-lr = 5e-4 # 3e-4
+lr = 5e-5 # 3e-4
 
 # greed decode的最大句子长度
 max_len = 60
 # beam size for bleu
-beam_size = 1  # 3
+beam_size = 3  # 3
 # Label Smoothing
 use_smoothing = False
 # NoamOpt
