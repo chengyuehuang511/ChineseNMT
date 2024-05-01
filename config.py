@@ -22,9 +22,9 @@ max_len = 60
 # beam size for bleu
 beam_size = 3  # 3
 # Label Smoothing
-use_smoothing = False
+use_smoothing = True
 # NoamOpt
-use_noamopt = False # True
+use_noamopt = True # True
 
 data_dir = './data'
 train_data_path = './data/json/train.json'
